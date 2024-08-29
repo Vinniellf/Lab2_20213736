@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado del Juego Ahorcado</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <h3 class="text-center mb-4">Juego de Ahorcado</h3>
+
+    <div class="alert alert-danger text-center" role="alert">
+        ¡Perdiste el juego! La palabra correcta era: <span th:text="${palabrajuego.respuesta}"></span>
+    </div>
+
+    <form method="get" action="/formulario">
+        <button type="submit" class="btn btn-primary btn-block">Intentar de Nuevo</button>
+    </form>
+</div>
+
+<!-- Bootstrap JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

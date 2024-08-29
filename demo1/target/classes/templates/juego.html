@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Configuración del Juego Ahorcado</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <h3 class="text-center mb-4">Juego de ahorcado</h3>
+
+    <form method="post" action="/jugando">
+        <div class="form-group">
+            <label><span th:text="${palabrajuego.current}" /></label>
+        </div>
+
+        <div class="form-group">
+            <label>Intentos restantes: <span th:text="${palabrajuego.intentos}" /></label>
+        </div>
+
+        <div class="form-group">
+            <label for="letra">Introduce una letra:</label>
+            <input type="text" class="form-control" id="letra" name="letra" placeholder="Ingresa una letra">
+        </div>
+
+        <input type="hidden" name="intentos" th:value="${palabrajuego.intentos}" >
+        <input type="hidden" name="actual"  th:value="${palabrajuego.current}" >
+        <input type="hidden" name="correcta" th:value="${palabrajuego.respuesta}" >
+
+        <button type="submit" class="btn btn-primary btn-block">Registrar</button>
+    </form>
+</div>
+
+<!-- Bootstrap JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
